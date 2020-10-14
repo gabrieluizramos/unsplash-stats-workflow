@@ -18,6 +18,3 @@ jobs:
         username: gabrieluizramos
         ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-
-    - name: Get the output stats
-      run: echo "The stats are ${{ steps.stats.outputs.stats }}"
