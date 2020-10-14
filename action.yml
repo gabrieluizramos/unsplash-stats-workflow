@@ -1,0 +1,21 @@
+name: 'Unsplash Stats Workflow'
+author: 'Gabriel Ramos (@gabrieluizramos)'
+description: 'Adds your Unsplash Stats to your Github Profile'
+inputs:
+  unsplash-username:
+    description: 'Your Unsplash username'
+    required: true
+  unsplash-access-key: 
+    description: 'Your Unsplash Access Key'
+    required: true
+  unsplash-secret-key:
+    description: 'Your Unsplash Secret Key'
+    required: true
+
+outputs:
+  stats:
+    description: 'Your stats'
+
+runs:
+  using: 'node12'
+  main: 'action/index.js'

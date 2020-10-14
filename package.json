@@ -1,0 +1,26 @@
+{
+  "name": "unsplash-stats-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "action/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrieluizramos/unsplash-stats-workflow.git"
+  },
+  "keywords": [],
+  "author": "Gabriel Ramos <gabriel.luiz.ramos@gmail.com> (https://gabrieluizramos.com.br)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrieluizramos/unsplash-stats-workflow/issues"
+  },
+  "homepage": "https://github.com/gabrieluizramos/unsplash-stats-workflow#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "node-fetch": "^2.6.1",
+    "unsplash-js": "^6.3.0"
+  }
+}
