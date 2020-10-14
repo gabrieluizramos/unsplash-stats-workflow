@@ -9,5 +9,11 @@ const client = new Unsplash({
 });
 
 exports.getUserSats = (user = username) => {
-  return client.users.profile(user).then(toJson);
+  return client.users
+    .statistics(user)
+    .then(toJson)
+    .then(stats => ({
+      downloads: stats.downloads.total,
+      views: stats.views.total
+    }));
 }

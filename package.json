@@ -4,6 +4,7 @@
   "description": "",
   "main": "action/index.js",
   "scripts": {
+    "action": "NODE_ENV=development node action",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
