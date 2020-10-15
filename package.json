@@ -5,7 +5,7 @@
   "main": "action/index.js",
   "scripts": {
     "action": "NODE_ENV=development node action",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ncc build action/index.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
     "@actions/github": "^4.0.0",
     "node-fetch": "^2.6.1",
     "unsplash-js": "^6.3.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.24.1"
   }
 }
