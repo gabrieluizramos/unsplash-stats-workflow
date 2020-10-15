@@ -12,6 +12,9 @@ inputs:
   SECRET_KEY:
     description: 'Unsplash Secret Key'
     required: true
+  file:
+    description: 'Your markdown file to search/replace content'
+    default: './README.md'
 
 outputs:
   stats:

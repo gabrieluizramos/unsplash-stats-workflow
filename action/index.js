@@ -3,7 +3,7 @@ require('./setup');
 const core = require('@actions/core');
 
 const { getUserSats } = require('./client');
-const { updateReadme } = require('./file');
+const { updateReadme } = require('./readme');
 
 (async () => {
   try {
