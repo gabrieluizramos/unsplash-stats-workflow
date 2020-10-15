@@ -9,11 +9,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Install
+    - name: Installing dependencies
       run: npm install
 
     # Collect and update markdown with Unsplash stats
-    - name: stats
+    - name: Gathering Unsplash stats
       uses: ./
       with:
         file: './README.test.md'
@@ -22,7 +22,7 @@ jobs:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
     
     # Commit/Push to your repo after changing
-    - name: update repo
+    - name: Updating repo
       uses: EndBug/add-and-commit@v5
       with:
         add: './README.test.md'
