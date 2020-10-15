@@ -60,7 +60,6 @@ module.exports = isDevelopment ? config.development : config.default;
 const { promises } = __webpack_require__(747);
 const { README_PATH } = __webpack_require__(884);
 
-
 const { readFile, writeFile } = promises;
 
 const read = async (path = README_PATH) => {
@@ -128,8 +127,8 @@ global.fetch = fetch;
 const COMMENTS_REGEXP = /(<!-- UNSPLASH-STATS:START -->)((?:.*?\n)+)(<!-- UNSPLASH-STATS:END -->)/g;
 
 const STATS_TEMPLATE = ({ downloads, views }) => [
-    `- Downloads: ${downloads}`,
     `- Views: ${views}`,
+    `- Downloads: ${downloads}`,
 ].join('\n')
 
 const replacer = data => (match, p1, p2, p3, offset, string) => {
