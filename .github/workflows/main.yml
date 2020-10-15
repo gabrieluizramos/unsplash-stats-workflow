@@ -12,6 +12,7 @@ jobs:
     - name: Install
       run: npm install
 
+    # Collect and update markdown with Unsplash stats
     - name: stats
       uses: ./
       with:
@@ -19,3 +20,15 @@ jobs:
         username: gabrieluizramos
         ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    
+    # Commit/Push to your repo after changing
+    - name: update repo
+      uses: EndBug/add-and-commit@v5
+      with:
+        add: './README.test.md'
+        author_name: gabrieluizramos
+        author_email: gabriel.luiz.ramos@gmail.com
+        message: "README updated with Unsplash stats"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

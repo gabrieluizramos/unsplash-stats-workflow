@@ -16,10 +16,6 @@ inputs:
     description: 'Your markdown file to search/replace content'
     default: './README.md'
 
-outputs:
-  stats:
-    description: 'stats'
-
 runs:
   using: 'node12'
   main: 'action/index.js'
