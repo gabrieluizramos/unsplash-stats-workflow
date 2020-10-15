@@ -1,7 +1,6 @@
 const { promises } = require('fs');
 const { README_PATH } = require('./config');
 
-
 const { readFile, writeFile } = promises;
 
 const read = async (path = README_PATH) => {
