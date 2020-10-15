@@ -25,6 +25,12 @@
     "unsplash-js": "^6.3.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.24.1"
+    "@vercel/ncc": "^0.24.1",
+    "husky": "^4.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "post-commt": "npm run build && git comit --am 'build'"
+    }
   }
 }

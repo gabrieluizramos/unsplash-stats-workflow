@@ -1,8 +1,11 @@
 const COMMENTS_REGEXP = /(<!-- UNSPLASH-STATS:START -->)((?:.*?\n)+)(<!-- UNSPLASH-STATS:END -->)/g;
 
+const formatter = new Intl.NumberFormat();
+const format = number => formatter.format(number);
+
 const STATS_TEMPLATE = ({ downloads, views }) => [
-    `- Views: ${views}`,
-    `- Downloads: ${downloads}`,
+    `- **Views**: ${format(views)}`,
+    `- **Downloads**: ${format(downloads)}`,
 ].join('\n')
 
 const replacer = data => (match, p1, p2, p3, offset, string) => {
