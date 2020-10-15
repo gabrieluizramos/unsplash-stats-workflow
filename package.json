@@ -30,7 +30,7 @@
   },
   "husky": {
     "hooks": {
-      "post-commt": "npm run build && git comit --am 'build'"
+      "post-commit": "npm run build && git commit --am 'build'"
     }
   }
 }
