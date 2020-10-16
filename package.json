@@ -1,7 +1,7 @@
 {
   "name": "unsplash-stats-workflow",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Github action that keeps your Unsplash Stats updated",
   "main": "src/index.js",
   "scripts": {
     "action": "NODE_ENV=development node src",
@@ -18,7 +18,13 @@
     "type": "git",
     "url": "git+https://github.com/gabrieluizramos/unsplash-stats-workflow.git"
   },
-  "keywords": [],
+  "keywords": [
+    "github",
+    "workflow",
+    "action",
+    "unsplash",
+    "stats"
+  ],
   "author": "Gabriel Ramos <gabriel.luiz.ramos@gmail.com> (https://gabrieluizramos.com.br)",
   "license": "ISC",
   "bugs": {
