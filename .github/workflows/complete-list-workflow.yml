@@ -1,11 +1,11 @@
 name: Test list workflow
 
-on:
- workflow_run:
-    workflows: ["Test and Build"]
-    branches: [master]
-    types:
-      - completed
+# on:
+#  workflow_run:
+#     workflows: ["Test and Build"]
+#     branches: [master]
+#     types:
+#       - completed
 
 jobs:
   complete_workflow_list:

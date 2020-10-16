@@ -4,20 +4,37 @@ description: 'Adds Unsplash Stats to your Github Profile'
 
 inputs:
   username:
-    description: 'Unsplash username'
+    description: Unsplash username
     required: true
   ACCESS_KEY:
-    description: 'Unsplash Access Key'
+    description: Unsplash Access Key
     required: true
   SECRET_KEY:
-    description: 'Unsplash Secret Key'
+    description: Unsplash Secret Key
     required: true
   file:
-    description: 'Your markdown file to search/replace content'
+    description: Your markdown file to search/replace content
     default: './README.md'
   template:
-    description: 'Sets the desired template'
+    description: Sets the desired template
+    required: false
     default: list
+  github_token:
+    description: GitHub token with Repo scope
+    required: false
+    default: ${{ github.token }}
+  committer_user:
+    description: Committer user
+    required: false
+    default: unsplash-stats-bot
+  committer_email:
+    description: Committer email
+    required: false
+    default: unsplash-stats-bot@example.com
+  commit_message:
+    description: Commit message
+    required: false
+    default: Updated with latest Unsplash Stats
 
 runs:
   using: 'node12'
