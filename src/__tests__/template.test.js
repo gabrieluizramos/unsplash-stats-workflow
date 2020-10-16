@@ -33,7 +33,7 @@ it('Format table', () => {
     # Anything
     <!-- UNSPLASH-STATS:START -->
     | **Views**         | **Downloads**        |
-    |-------------------|----------------------|
+    |:-----------------:|:--------------------:|
     |321   | 123 |
     <!-- UNSPLASH-STATS:END -->
     "

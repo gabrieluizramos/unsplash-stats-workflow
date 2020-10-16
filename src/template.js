@@ -14,7 +14,7 @@ const templates = {
   table: ({ downloads, views }) =>
     [
       `| **Views**         | **Downloads**        |`,
-      `|-------------------|----------------------|`,
+      `|:-----------------:|:--------------------:|`,
       `|${format(views)}   | ${format(downloads)} |`
     ].join('\n')
 };
