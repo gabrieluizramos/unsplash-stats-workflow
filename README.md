@@ -1,7 +1,7 @@
 # Unsplash Stats Workflow
 GitHub action to add your Unsplash stats
 
-![Demo](./demo.jpg)
+![Demo](./docs/demo.jpg)
 
 ## How to use
 
@@ -38,27 +38,38 @@ jobs:
         SECRET_KEY: ${{ secrets.SECRET_KEY }} # your unsplash SECRET_KEY
 ```
 
-### Options and Keys
-You'll have to set some values in order to run the action. These tokens can be found at the [Unsplash Developers](https://unsplash.com/developers).
-
-If you haven't set up any app, just go to "your apps" link at the main menu (on the top right corner) and create a "New Application". This will give you the Keys you'll need to execute the action properly.
+### Options
+You'll have to set some options values in order to properly run the action.
 
 | Option name     | Description                      | Where to define | Required | Default                              |
 |-----------------|----------------------------------|-----------------|----------|--------------------------------------|
 | file            | Your README file path            | Workflow file   | false    | `./README.md`                        |
 | template        | Stats data template (table/list) | Workflow file   | false    | `list`                               |
 | username        | Your Unsplash's username         | Workflow file   | true     |                                      |
-| ACCESS_KEY      | Your app's access key            | Github Secrets  | true     |                                      |
-| SECRET_KEY      | Your app's secret key            | Github Secrets  | true     |                                      |
+| ACCESS_KEY      | Your Unsplash app's access key   | Github Secrets  | true     |                                      |
+| SECRET_KEY      | Your Unsplash app's secret key   | Github Secrets  | true     |                                      |
 | github_token    | GitHub token with Repo Scope     | Workflow file   | false    | ${{ github.token }}                  |
 | committer_user  | Customize committer user         | Workflow file   | false    | `unsplash-stats-bot`                 |
 | committer_email | Customize committer email        | Workflow file   | false    | `unsplash-stat-bots@example.com`     |
 | commit_message  | Customize commit message         | Workflow file   | false    | `Updated with latest Unsplash Stats` |
 
+For security reasons these keys (both `ACCESS_KEY` and `SECRET_KEY`) should be kept under the Github Secrets and should not be passed directly into the created workflow file. The only information you should provide at your workflow is your `username`.
 
-These keys (both `ACCESS_KEY` and `SECRET_KEY`) should be kept under the Github Secrets and should not be passed directly into the created workflow file. The only information you should provide at your workflow is your `username`.
+You can also follow the guide below as a walk-through the process of creating/adding your keys.
+
+#### Creating and adding your Unsplash keys to the workflow
+You'll need some keys to access the Unsplash API. These values can be found at the [Unsplash Developers](https://unsplash.com/developers). You can also follow the steps below:
+
+- Access [Unsplash Developers](https://unsplash.com/developers): ![Unsplash Developers](./docs/unsplash/01.png)
+- Click on `your apps` menu at the top right corner: ![Your apps link](./docs/unsplash/02.png)
+- Click on the `new application`: ![New Application](./docs/unsplash/03.png)
+- Fill the application information form and read the terms
+- Now you'll be redirected to your app page: ![App page](./docs/unsplash/04.png)
+- Scroll down to copy your keys (access and secret): ![Access/Secret key](./docs/unsplash/05.png)
+- Now go to your Github Repo `Settings` and click on the `Secrets` menu
+- And just add the `ACCESS_KEY` and `SECRET_KEY` at your repo's secret: ![Keys at secrets](./docs/unsplash/06.png)
 
 ---
 
 ## Examples
-- [My Github Profile](https://github.com/gabrieluizramos/)
+- [My Github profile](https://github.com/gabrieluizramos/)
