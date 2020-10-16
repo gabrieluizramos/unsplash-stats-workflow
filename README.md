@@ -18,6 +18,25 @@ The workflow will replace the comment with your Unsplash.
 - Create a `.github` folder and create a `workflows` folder inside of it, in case it doesn't exists.
 - Create a new workflow file named something like `unsplash-stats-workflow.yml` with the following content:
 
+```yml
+jobs:
+  unsplash_stats_job:
+    runs-on: ubuntu-latest
+    name: Updates Unsplash stats and blog posts
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Collect and update markdown with Unsplash stats
+    - name: Gathering Unsplash stats
+      uses: gabrieluizramos/unsplash-stats-workflow@master
+      with:
+        username: gabrieluizramos
+        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+```
+
 ### Options and Keys
 You'll have to set some values in order to run the action. These tokens can be found at the [Unsplash Developers](https://unsplash.com/developers).
 
