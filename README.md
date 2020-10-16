@@ -1,5 +1,5 @@
 # Unsplash Stats Workflow
-GitHub action to add your Unsplash stats 
+GitHub action to add your Unsplash stats
 
 ## How to use
 
@@ -32,3 +32,7 @@ If you haven't set up any app, just go to "your apps" link at the main menu (on 
 
 
 These keys (both `ACCESS_KEY` and `SECRET_KEY`) should be kept under the Github Secrets and should not be passed directly into the created workflow file. The only information you should provide at your workflow is your `username`.
+
+
+## Examples
+- [My Github Profile](https://github.com/gabrieluizramos/)

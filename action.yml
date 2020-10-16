@@ -6,7 +6,7 @@ inputs:
   username:
     description: 'Unsplash username'
     required: true
-  ACCESS_KEY: 
+  ACCESS_KEY:
     description: 'Unsplash Access Key'
     required: true
   SECRET_KEY:
@@ -15,11 +15,17 @@ inputs:
   file:
     description: 'Your markdown file to search/replace content'
     default: './README.md'
+  template:
+    description: 'Sets the desired template'
+    default: list
+  emoji:
+    description: 'Adds some base emojis to view/download stats'
+    default: false
 
 runs:
   using: 'node12'
   main: 'dist/index.js'
 
-branding: 
+branding:
   icon: camera
   color: black
