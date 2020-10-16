@@ -1,10 +1,10 @@
 const {
-  committerUser,
-  committerEmail,
-  commitMessage,
-  githubToken,
+  // committerUser,
+  // committerEmail,
+  // commitMessage,
+  // githubToken,
   repository,
-  README_PATH
+  // README_PATH
 } = require('./config');
 
 exports.updateRepo = async () => {
