@@ -1,12 +1,12 @@
 const { default: Unsplash, toJson } = require('unsplash-js');
 const { accessKey, secretKey, username } = require('./config');
 
-const client = new Unsplash({
+const unsplashClient = new Unsplash({
   accessKey,
   secret: secretKey
 });
 
-exports.getUserSats = (user = username) =>
+exports.getUserStats = ({ user = username, client = unsplashClient }) =>
   client.users
     .statistics(user)
     .then(toJson)

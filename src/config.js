@@ -1,8 +1,14 @@
 const core = require('@actions/core');
 
-const isDevelopment = process.env.NODE_ENV === 'development';
+const env = process.env.NODE_ENV;
 
 const config = {
+  test: {
+    username: 'username',
+    accessKey: 'accessKey',
+    secretKey: 'secretKey',
+    README_PATH: './ANY.md'
+  },
   development: {
     username: process.env.UNSPLASH_USERNAME,
     accessKey: process.env.UNSPLASH_ACCESS_KEY,
@@ -17,4 +23,4 @@ const config = {
   }
 };
 
-module.exports = isDevelopment ? config.development : config.default;
+module.exports = config[env || 'default'];
