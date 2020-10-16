@@ -4,8 +4,6 @@ const {
   committerUser,
   committerEmail,
   commitMessage,
-  // githubToken,
-  // repository,
   README_PATH
 } = require('./config');
 

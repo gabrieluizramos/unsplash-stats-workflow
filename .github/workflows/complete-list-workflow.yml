@@ -27,14 +27,3 @@ jobs:
         username: gabrieluizramos
         ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-
-    # # Commit/Push to your repo after changing
-    # - name: Updating repo
-    #   uses: EndBug/add-and-commit@v5
-    #   with:
-    #     add: './README.test.list.md'
-    #     message: "List README updated with Unsplash stats"
-    #     author_name: gabrieluizramos-bot
-    #     author_email: gabriel.luiz.ramos+bot@gmail.com
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
