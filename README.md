@@ -16,8 +16,7 @@ The workflow will replace the comment with your Unsplash.
 
 ### Setup
 - Create a `.github` folder and create a `workflows` folder inside of it, in case it doesn't exists.
-- Create a new workflow file named something like `unsplash-stats-workflow.yml` with the following content:
-
+- Create a new workflow file (named something like `unsplash-stats-workflow.yml`, in case it doesn't exists) with the following content:
 ```yml
 jobs:
   unsplash_stats_job:
@@ -32,9 +31,9 @@ jobs:
     - name: Gathering Unsplash stats
       uses: gabrieluizramos/unsplash-stats-workflow@master
       with:
-        username: gabrieluizramos
-        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        username: gabrieluizramos # your unsplash username
+        ACCESS_KEY: ${{ secrets.ACCESS_KEY }} # your unsplash ACCESS_KEY
+        SECRET_KEY: ${{ secrets.SECRET_KEY }} # your unsplash SECRET_KEY
 ```
 
 ### Options and Keys
@@ -57,6 +56,7 @@ If you haven't set up any app, just go to "your apps" link at the main menu (on 
 
 These keys (both `ACCESS_KEY` and `SECRET_KEY`) should be kept under the Github Secrets and should not be passed directly into the created workflow file. The only information you should provide at your workflow is your `username`.
 
+---
 
 ## Examples
 - [My Github Profile](https://github.com/gabrieluizramos/)

@@ -34,7 +34,7 @@ inputs:
   commit_message:
     description: Commit message
     required: false
-    default: (bot) Updated with latest Unsplash Stats
+    default: Updated with latest Unsplash Stats
 
 runs:
   using: 'node12'
