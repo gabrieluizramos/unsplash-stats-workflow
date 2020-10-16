@@ -4,12 +4,13 @@ const { getUserStats } = require('../client');
 const { accessKey, secretKey, username } = require('../config');
 
 jest.mock('unsplash-js');
-unsplash.toJson.mockImplementation(data => data);
+unsplash.toJson.mockImplementation((data) => data);
 
 it('should create a client instance', () => {
   expect(unsplash.default).toHaveBeenCalledWith({
-    accessKey, secret: secretKey
-  })
+    accessKey,
+    secret: secretKey
+  });
 });
 
 it('should fetch user stats', async () => {
@@ -26,7 +27,7 @@ it('should fetch user stats', async () => {
     users: {
       statistics: jest.fn().mockResolvedValueOnce(payload)
     }
-  }
+  };
 
   const data = await getUserStats({ client });
 
@@ -34,6 +35,6 @@ it('should fetch user stats', async () => {
   expect(client.users.statistics).toHaveBeenCalledWith(username);
   expect(data).toEqual({
     downloads: payload.downloads.total,
-    views: payload.views.total,
+    views: payload.views.total
   });
 });

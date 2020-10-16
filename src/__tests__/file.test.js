@@ -6,9 +6,9 @@ const { README_PATH } = require('../config');
 jest.mock('fs', () => ({
   promises: {
     readFile: jest.fn(),
-    writeFile: jest.fn(),
+    writeFile: jest.fn()
   }
-}))
+}));
 
 it('should readFile by given path', async () => {
   promises.readFile.mockResolvedValueOnce('');
