@@ -18,9 +18,6 @@ inputs:
   template:
     description: 'Sets the desired template'
     default: list
-  emoji:
-    description: 'Adds some base emojis to view/download stats'
-    default: false
 
 runs:
   using: 'node12'
