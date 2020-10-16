@@ -26,9 +26,9 @@ jobs:
       uses: EndBug/add-and-commit@v5
       with:
         add: './README.test.md'
-        author_name: gabrieluizramos
-        author_email: gabriel.luiz.ramos@gmail.com
         message: "README updated with Unsplash stats"
+        author_name: gabrieluizramos-bot
+        author_email: gabriel.luiz.ramos+bot@gmail.com
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
