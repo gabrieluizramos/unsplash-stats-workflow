@@ -1,6 +1,8 @@
 # Unsplash Stats Workflow
 GitHub action to add your Unsplash stats
 
+![Demo](./demo.jpg)
+
 ## How to use
 
 ### Comment Section
