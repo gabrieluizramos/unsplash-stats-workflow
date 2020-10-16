@@ -1,13 +1,16 @@
+name: Test list workflow
+
 on:
  workflow_run:
     workflows: ["Test and Build"]
     branches: [master]
     types:
       - completed
+
 jobs:
   complete_workflow_list:
     runs-on: ubuntu-latest
-    name: Tests complete workflow
+    name: List template complete workflow
 
     steps:
     - name: Checkout
@@ -35,36 +38,3 @@ jobs:
         author_email: gabriel.luiz.ramos+bot@gmail.com
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  complete_workflow_table:
-    runs-on: ubuntu-latest
-    name: Tests complete workflow
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Installing dependencies
-      run: npm install
-
-    # Collect and update markdown with Unsplash stats
-    - name: Gathering Unsplash stats
-      uses: ./
-      with:
-        file: './README.test.table.md'
-        username: gabrieluizramos
-        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        template: table
-
-    # Commit/Push to your repo after changing
-    - name: Updating repo
-      uses: EndBug/add-and-commit@v5
-      with:
-        add: './README.test.table.md'
-        message: "Table README updated with Unsplash stats"
-        author_name: gabrieluizramos-bot
-        author_email: gabriel.luiz.ramos+bot@gmail.com
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
