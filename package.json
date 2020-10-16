@@ -4,8 +4,8 @@
   "description": "",
   "main": "action/index.js",
   "scripts": {
-    "action": "NODE_ENV=development node action",
-    "build": "ncc build action/index.js -o dist"
+    "action": "NODE_ENV=development node src",
+    "build": "ncc build -m src -o dist"
   },
   "repository": {
     "type": "git",
