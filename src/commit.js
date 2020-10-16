@@ -1,4 +1,3 @@
-const core = require('@actions/core');
 const simpleGit = require('simple-git');
 
 const options = {
@@ -7,7 +6,7 @@ const options = {
   maxConcurrentProcesses: 6,
 };
 
-const gitClient = simpleGit(options);
+const git = simpleGit(options);
 
 const {
   committerUser,
@@ -19,27 +18,11 @@ const {
 } = require('./config');
 
 exports.updateRepo = async () => {
-  console.log('branch is', core.getInput('branch'));
-  const git = await gitClient.init();
-  await git
-    .addConfig('user.email', committerEmail)
-    .addConfig('user.name', committerUser)
-    .fetch()
-    .pull()
-    .add(README_PATH)
-    .commit(commitMessage)
-    .push()
-  // await exec('git', ['config', '--global', 'user.email', committerEmail]);
-  // if (githubToken) {
-  //   await exec('git', [
-  //     'remote',
-  //     'set-url',
-  //     'origin',
-  //     `https://${githubToken}@github.com/${repository}.git`
-  //   ]);
-  // }
-  // await exec('git', ['config', '--global', 'user.name', committerUser]);
-  // await exec('git', ['add', README_PATH]);
-  // await exec('git', ['commit', '-m', commitMessage]);
-  // await exec('git', ['push']);
+  await git.addConfig('user.email', committerEmail)
+  await git.addConfig('user.name', committerUser)
+  await git.fetch()
+  await git.pull()
+  await git.add(README_PATH)
+  await git.commit(commitMessage)
+  await git.push()
 };
