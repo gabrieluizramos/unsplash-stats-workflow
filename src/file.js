@@ -4,15 +4,15 @@ const { README_PATH } = require('./config');
 const { readFile, writeFile } = promises;
 
 const read = async (path = README_PATH) => {
-    const file = await readFile(path);
-    return file.toString();
-}
+  const file = await readFile(path);
+  return file.toString();
+};
 
 const write = async (data, path = README_PATH) => {
-    await writeFile(path, data);
-}
+  await writeFile(path, data);
+};
 
 module.exports = {
-    read,
-    write
-}
+  read,
+  write
+};

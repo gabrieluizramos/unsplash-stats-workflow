@@ -5,7 +5,12 @@
   "main": "action/index.js",
   "scripts": {
     "action": "NODE_ENV=development node src",
-    "build": "ncc build -m src -o dist"
+    "build": "ncc build -m src -o dist",
+    "prettier": "prettier --ignore-path .gitignore src/**/*.js",
+    "format": "npm run prettier -- --write",
+    "check":  "npm run prettier -- --list-different",
+    "lint": "eslint src",
+    "validate": "npm run lint && npm run check"
   },
   "repository": {
     "type": "git",
@@ -26,7 +31,12 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.24.1",
-    "husky": "^4.3.0"
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2"
   },
   "husky": {
     "hooks": {
