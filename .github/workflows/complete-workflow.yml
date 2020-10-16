@@ -1,10 +1,14 @@
-on: [push]
-
+on:
+ workflow_run:
+    workflows: ["Test and Build"]
+    branches: [master]
+    types:
+      - completed
 jobs:
-  unsplash_stats_job:
+  complete_workflow:
     runs-on: ubuntu-latest
-    name: A job to print Unsplash Stats
-    
+    name: Tests complete workflow
+
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -20,7 +24,7 @@ jobs:
         username: gabrieluizramos
         ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-    
+
     # Commit/Push to your repo after changing
     - name: Updating repo
       uses: EndBug/add-and-commit@v5

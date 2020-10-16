@@ -1,0 +1,38 @@
+name: Test and Build
+
+on: [push]
+
+jobs:
+  test_and_build:
+    runs-on: ubuntu-latest
+    name: Validate action
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Installing dependencies
+      run: npm install
+
+    - name: Linting
+      run: npm run lint
+
+    - name: Testing
+      run: npm run test
+
+    - name: Checking format
+      run: npm run prettier -- --list-different
+
+    - name: Building files
+      run: npm run build
+
+    - name: Commiting build
+      uses: EndBug/add-and-commit@v5
+      with:
+        add: './dist'
+        message: "Building action"
+        author_name: gabrieluizramos-bot
+        author_email: gabriel.luiz.ramos+bot@gmail.com
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
