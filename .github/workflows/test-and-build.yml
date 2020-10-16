@@ -21,7 +21,7 @@ jobs:
       run: npm run test
 
     - name: Checking format
-      run: npm run prettier -- --list-different
+      run: npm run check
 
     - name: Building files
       run: npm run build
