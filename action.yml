@@ -42,4 +42,4 @@ runs:
 
 branding:
   icon: camera
-  color: black
+  color: gray-dark
