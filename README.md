@@ -43,12 +43,12 @@ If you haven't set up any app, just go to "your apps" link at the main menu (on 
 
 | Option name     | Description                      | Where to define | Required | Default                              |
 |-----------------|----------------------------------|-----------------|----------|--------------------------------------|
-| file            | Your README file path            | Workflow file   | false    | './README.md'                        |
+| file            | Your README file path            | Workflow file   | false    | `./README.md`                        |
 | template        | Stats data template (table/list) | Workflow file   | false    | `list`                               |
 | username        | Your Unsplash's username         | Workflow file   | true     |                                      |
 | ACCESS_KEY      | Your app's access key            | Github Secrets  | true     |                                      |
 | SECRET_KEY      | Your app's secret key            | Github Secrets  | true     |                                      |
-| github_token    | GitHub token with Repo Scope     | Workflow file   | false    | ${{ secrets.GITHUB_TOKEN }}          |
+| github_token    | GitHub token with Repo Scope     | Workflow file   | false    | ${{ github.token }}                  |
 | committer_user  | Customize committer user         | Workflow file   | false    | `unsplash-stats-bot`                 |
 | committer_email | Customize committer email        | Workflow file   | false    | `unsplash-stat-bots@example.com`     |
 | commit_message  | Customize commit message         | Workflow file   | false    | `Updated with latest Unsplash Stats` |
