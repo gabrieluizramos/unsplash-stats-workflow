@@ -6,7 +6,7 @@ const unsplashClient = new Unsplash({
   secret: secretKey
 });
 
-exports.getUserStats = ({ user = username, client = unsplashClient }) =>
+exports.getUserStats = ({ user = username, client = unsplashClient } = {}) =>
   client.users
     .statistics(user)
     .then(toJson)

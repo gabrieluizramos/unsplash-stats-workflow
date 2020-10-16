@@ -14,7 +14,7 @@ const config = {
     username: process.env.UNSPLASH_USERNAME,
     accessKey: process.env.UNSPLASH_ACCESS_KEY,
     secretKey: process.env.UNSPLASH_SECRET_KEY,
-    README_PATH: './README.test.md',
+    README_PATH: './README.test.list.md',
     template: 'list'
   },
   default: {
