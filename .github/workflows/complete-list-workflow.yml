@@ -1,11 +1,11 @@
 name: Test list workflow
 
-# on:
-#  workflow_run:
-#     workflows: ["Test and Build"]
-#     branches: [master]
-#     types:
-#       - completed
+on:
+ workflow_run:
+    workflows: ["Test and Build"]
+    branches: [master]
+    types:
+      - completed
 
 jobs:
   complete_workflow_list:
@@ -28,13 +28,13 @@ jobs:
         ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
-    # Commit/Push to your repo after changing
-    - name: Updating repo
-      uses: EndBug/add-and-commit@v5
-      with:
-        add: './README.test.list.md'
-        message: "List README updated with Unsplash stats"
-        author_name: gabrieluizramos-bot
-        author_email: gabriel.luiz.ramos+bot@gmail.com
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # # Commit/Push to your repo after changing
+    # - name: Updating repo
+    #   uses: EndBug/add-and-commit@v5
+    #   with:
+    #     add: './README.test.list.md'
+    #     message: "List README updated with Unsplash stats"
+    #     author_name: gabrieluizramos-bot
+    #     author_email: gabriel.luiz.ramos+bot@gmail.com
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
