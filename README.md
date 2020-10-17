@@ -20,6 +20,12 @@ The workflow will replace the comment with your Unsplash.
 - Create a `.github` folder and create a `workflows` folder inside of it, in case it doesn't exists.
 - Create a new workflow file (named something like `unsplash-stats-workflow.yml`, in case it doesn't exists) with the following content:
 ```yml
+# Runs on
+on:
+  push: # Push
+  schedule: # And every hour (to update stats hourly)
+    - cron: "0 * * * *"
+
 jobs:
   unsplash_stats_job:
     runs-on: ubuntu-latest
