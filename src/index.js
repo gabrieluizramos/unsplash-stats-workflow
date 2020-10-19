@@ -12,6 +12,7 @@ const { updateRepo } = require('./commit');
     await updateReadme(stats);
     await updateRepo();
   } catch (err) {
+    core.error(err);
     core.setFailed(err.message);
   }
 })();
